@@ -76,8 +76,16 @@ WSGI_APPLICATION = 'personalcv.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'mssql',
+        'NAME': 'curriculum',
+        'USER' :'sa',
+        'PASSWORD' :'Strong.Pwd-123',
+        'HOST': 'myserver.database.windows.net',
+        'PORT': '9000',
+        'OPTIONS': {
+            'driver': 'ODBC Driver 17 for SQL Server',
+            'isolation_level': 'READ UNCOMMITTED'
+        },
     }
 }
 
