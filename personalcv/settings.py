@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
 from pathlib import Path
-
+import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -25,8 +25,9 @@ SECRET_KEY = 'django-insecure-u2y=^bklkjzo$zn8=!25chlwy3(-gy)yg7%n_f5j9c%y2&%k4+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
+MEDIA_URL = '/images/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+ALLOWED_HOSTS = ["*"]
 
 # Application definition
 
@@ -36,9 +37,16 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
+    'django.contrib.sessions',
     'app',
+    'bootstrap5',
+
 
 ]
+
+SITE_ID = 1
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -76,16 +84,8 @@ WSGI_APPLICATION = 'personalcv.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'mssql',
-        'NAME': 'curriculum',
-        'USER' :'sa',
-        'PASSWORD' :'Strong.Pwd-123',
-        'HOST': 'myserver.database.windows.net',
-        'PORT': '9000',
-        'OPTIONS': {
-            'driver': 'ODBC Driver 17 for SQL Server',
-            'isolation_level': 'READ UNCOMMITTED'
-        },
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
