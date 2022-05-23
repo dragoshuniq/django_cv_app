@@ -9,11 +9,10 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0"
     />
-
     <link
       rel="stylesheet"
       type="text/css"
-      href="{% static 'style.css' %}"
+      href="{% static 'styles.css'%}"
     />
 
     <link
@@ -36,16 +35,131 @@
     <title>CV Todoroscean Dragos</title>
   </head>
   <body>
-    {{person.photoFile.url}} {{studies.0.institutionName}}
-    <div class="container">
+    <div class="container card p-5">
       <div class="row">
-        <img
-          src="{{person.photoFile.url}}"
-          alt="photo"
-          class="rounded mx-50 d-block"
-        />
+        <div class="col-4">
+          <img
+            src="{{person.photoFile.url}}"
+            alt="photo"
+            id="profile_image"
+            class="shadow"
+          />
+        </div>
+        <div class="col">
+          <h1 class="nameText">{{person.firstName}}</h1>
+          <h1 class="nameText">{{person.lastName}}</h1>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-4">
+          <button
+            type="button"
+            class="btn btn-info w-100 page_link mt-3"
+          >
+            <a href="/projects" class="h-100 w-100 d-block"
+              >Projects</a
+            >
+          </button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-4">
+          <p class="info_type">Contact</p>
+          {% for cont in contacts %}
+          <div class="row info_container shadow">
+            <div class="col-5">
+              <p class="contactTextLabel">{{cont.contactType}}:</p>
+            </div>
+            <div class="col">
+              <p class="contactText">{{cont.contactDescription}}</p>
+            </div>
+          </div>
+          {%endfor %}
+          <p class="info_type">Languages</p>
+          {% for lang in languages %}
+          <div class="row info_container shadow">
+            <div class="col-5">
+              <p class="contactTextLabel">{{lang.languageName}}:</p>
+            </div>
+            <div class="col">
+              <p class="contactText">{{lang.languageLevel}}</p>
+            </div>
+          </div>
+          {%endfor %}
+          <p class="info_type">Awards</p>
+          {% for aw in awards %}
+          <div class="row info_container shadow">
+            <div class="col-6">
+              <p class="contactTextLabel font-weight-bold">
+                {{aw.awardName}}:
+              </p>
+            </div>
+            <div class="col">
+              <p class="contactText">{{aw.awardDescription}}</p>
+            </div>
+          </div>
+          {%endfor %}
+        </div>
+        <div class="col">
+          <div class="row px-4">
+            <div class="col">
+              <p class="info_type">Education</p>
+              {% for edu in studies %}
+              <div class="row info_container shadow">
+                <div class="col-5">
+                  <p class="contactTextLabel">
+                    {{edu.institutionName}}:
+                  </p>
+                </div>
+                <div class="col">
+                  <p class="contactText">
+                    Start date:{{edu.startDate}}
+                  </p>
+                  <p class="contactText">End date:{{edu.endDate}}</p>
+                </div>
+              </div>
+              {%endfor %}
+            </div>
+          </div>
+          <div class="row px-4">
+            <div class="col">
+              <p class="info_type">Experience</p>
+              {% for exp in experience %}
+              <div class="row info_container shadow">
+                <div class="col-5">
+                  <p class="contactTextLabel font-weight-bold">
+                    {{exp.experienceName}}:
+                  </p>
+                  <p class="contactTextLabel italic">
+                    {{exp.experienceDescription}}
+                  </p>
+                </div>
+                <div class="col">
+                  <p class="contactText">
+                    Start date:{{exp.startDate}}
+                  </p>
+                  <p class="contactText">End date:{{exp.endDate}}</p>
+                </div>
+              </div>
+              {%endfor %}
+            </div>
+          </div>
+          <div class="row px-4">
+            <div class="col">
+              {% for info in information %}
+              <p class="info_type">{{info.infoName}}</p>
 
-        <div class="col-6" id="text2">ahahha</div>
+              <div class="row info_container shadow">
+                <div class="col">
+                  <p class="contactTextLabel center">
+                    {{info.infoDescription}}
+                  </p>
+                </div>
+              </div>
+              {%endfor %}
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </body>

@@ -2,3 +2,122 @@
   color: red;
   font-size: 200px;
 }
+
+#profile_image {
+  width: 200px;
+  height: 220px;
+  border-radius: 100px;
+  object-fit: cover;
+  display: block;
+  margin: 20px auto;
+}
+
+.contactTextLabel {
+  text-align: right;
+}
+
+.contactText {
+  font-weight: bold;
+}
+
+.container {
+  box-shadow: -2px 0px 38px 8px rgba(107, 104, 104, 0.59);
+  -webkit-box-shadow: -2px 0px 38px 8px rgba(107, 104, 104, 0.59);
+  -moz-box-shadow: -2px 0px 38px 8px rgba(107, 104, 104, 0.59);
+}
+
+.info_container {
+  border-width: 2px !important;
+  border-color: #64b6ac;
+  border-style: solid;
+  margin: 5px 0;
+  padding: 10px 0;
+  border-radius: 10px;
+}
+.project_container {
+  min-height: 400px;
+}
+p {
+  margin: 0px !important;
+}
+.shadow {
+  box-shadow: -2px 0px 38px 8px rgba(107, 104, 104, 0.59);
+  -webkit-box-shadow: -2px 0px 38px 8px rgba(107, 104, 104, 0.59);
+  -moz-box-shadow: -2px 0px 38px 8px rgba(107, 104, 104, 0.59);
+}
+
+.nameText {
+  font-size: 60px;
+  text-transform: uppercase;
+  font-style: italic;
+  font-weight: bold;
+  margin-left: 50px;
+  margin-top: 20px;
+}
+
+.project_label {
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: bold;
+  font-size: 26px;
+  color: #64b6ac;
+  margin: 20px 0 !important;
+  text-shadow: 1px 1px rgba(107, 104, 104, 0.59);
+}
+
+.info_type {
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: bold;
+  font-size: 30px;
+  color: #64b6ac;
+  margin: 20px 0 !important;
+  text-shadow: 1px 1px rgba(107, 104, 104, 0.59);
+}
+.info_type:before,
+.info_type:after {
+  content: "";
+  border-bottom: 3px solid #64b6ac;
+  width: 100%;
+  display: block;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.center {
+  text-align: center !important;
+}
+.project_image {
+  max-height: 600px;
+  width: 250px;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto;
+}
+
+a {
+  text-decoration: none !important;
+  color: white !important;
+  font-weight: bold !important;
+  all: unset;
+}
+
+.link_button {
+  min-width: 50%;
+  border-radius: 20px !important;
+  display: block;
+  margin: 20px auto;
+}
+
+.page_link {
+  background-color: #64b6ac !important;
+  height: 40px;
+  border-radius: 10px !important;
+  width: 100%;
+}

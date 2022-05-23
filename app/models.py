@@ -44,7 +44,14 @@ class Award(models.Model):
     awardName = models.CharField(max_length=100)
     awardDescription = models.CharField(max_length=500)
     personId = models.ForeignKey(Person, on_delete=models.CASCADE)
-
+class Projects(models.Model):
+    projectId = models.AutoField(primary_key=True)
+    projectName = models.CharField(max_length=100)
+    projectDescription = models.CharField(max_length=1500)
+    projectTechnologies = models.CharField(max_length=500)
+    projectImage = models.ImageField(upload_to ='images/')
+    projectLink = models.CharField(max_length=500)
+    personId = models.ForeignKey(Person, on_delete=models.CASCADE)
 
 class OtherInformation(models.Model):
     infoId = models.AutoField(primary_key=True)
